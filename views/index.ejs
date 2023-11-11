@@ -10,24 +10,38 @@
 <body>
 
   <div class="grid-container-A">
+    <!-- Current Day Key Info -->
     <div class="grid-container-A-1" style="grid-column: span 3;grid-row: span 9;">
-      <div class="flexbox-container-today" style="grid-column: span 4;grid-row: span 4;">
+      <div class="flexbox-center" style="grid-column: span 4;grid-row: span 4;">
         <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
       </div>
       <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
-        <div style="grid-row: span 4;">
+        <div class="flexbox-center" style="grid-row: span 9; grid-column: span 12; margin-top: 4px;">
           <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
         </div>
-        <div style="grid-column: span 2;"></div>
+        <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
+          <h1>Max: 22°C</h1>
+        </div>
       </div>
-      <div style="grid-column: span 2;grid-row: span 2;"></div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="flexbox-center" style="grid-row: span 9; grid-column: span 12; margin-top: 4px;">
+          <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
+          <h1>Min: 10°C</h1>
+        </div>
+      </div>
       <div style="grid-column: span 3;"></div>
       <div style="grid-column: span 3;"></div>
       <div style="grid-column: span 3;"></div>
       <div style="grid-column: span 3;"></div>
     </div>
-    <div style="grid-column: span 4;"></div>
-    <div class="grid-container-B" style="grid-column: span 4;grid-row: span 8;">
+
+    <!-- Title and Search Box -->
+    <div class="flexbox-title" style="grid-column: span 4; grid-row: span 2;"></div>
+
+    <!-- Current Day Boxes -->
+    <div class="grid-container-B" style="grid-column: span 4;grid-row: span 7;">
       <div></div>
       <div></div>
       <div></div>
@@ -35,18 +49,120 @@
       <div></div>
       <div></div>
     </div>
+
+    <!-- Weekly Forecast -->
     <div class="flexbox-container" style="grid-column: span 7;grid-row: span 4;">
-      <div>hey</div>
-      <div>hey</div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/clear-night.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/cloudy.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/cloudy-1-day.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/cloudy-1-night.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/cloudy-2-day.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+      <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+        <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+          <h1>Tuesday</h1>
+          <p>14-11-2023</p>
+        </div>
+        <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+          <img src = "images/icons/weather/animated/cloudy-2-night.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>22</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+        </div>
+        <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+          <h1>10</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- <video autoplay muted loop id="background-video">
+  <!-- <video autoplay muted loop id="background-video" playbackRate = 0.1>
     <source src="videos/winter-scenery.mp4" type="video/mp4">
   </video> -->
   
