@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
     const sevenDayForecast = await axios.get(API_URL, configA);
     // const todayForecast = await axios.get(API_URL, configB);
     //let sunrise_time = new Date(result.data.daily.sunrise[0]).toLocaleString();
-    console.log(sevenDayForecast.data);
+    // console.log(sevenDayForecast.data);
     // console.log(todayForecast.data);
     res.render("index.ejs", { weather: sevenDayForecast.data })
   } catch (error) {
