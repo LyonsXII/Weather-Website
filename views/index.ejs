@@ -38,7 +38,15 @@
     </div>
 
     <!-- Title and Search Box -->
-    <div class="flexbox-title" style="grid-column: span 4; grid-row: span 2;"></div>
+    <div class="grid-title" style="grid-column: span 4; grid-row: span 2;">
+        <div><h1>Liverpool</h1></div> <div style="grid-column: span 11;"><h2>Monday 13th November</h2></div>
+      <div style="grid-column: span 11" class="search-container">
+        <form action="/submit">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 
     <!-- Current Day Boxes -->
     <div class="grid-container-B" style="grid-column: span 4;grid-row: span 7;">
@@ -217,9 +225,9 @@
     </div>
   </div>
 
-  <video autoplay muted loop id="background-video" playbackRate = 0.1>
+  <!-- <video autoplay muted loop id="background-video" playbackRate = 0.1>
     <source src="videos/winter-scenery.mp4" type="video/mp4">
-  </video>
+  </video> -->
   
 </body>
 

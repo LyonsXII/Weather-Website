@@ -49,9 +49,36 @@ body {
   width: 86%;
 }
 
-.flexbox-title {
+.grid-title {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto repeat(11, 1fr);
   background-color: var(--colourB);
   border-radius: 10px;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.search-container {
+  margin-top: 10px;
+}
+
+.grid-title h1 {
+  font-size: 2rem;
+}
+
+.grid-title h2 {
+  font-size: 1.4rem;
+  margin: 12px 0px 0px 20px;
+  white-space: nowrap;
+}
+
+.flexbox-linebreak {
+  flex-basis: 100%;
+}
+
+.flexbox-title > button {
+  justify-self: flex-end;
 }
 
 .grid-container-B {
@@ -132,7 +159,7 @@ body {
 .forecast-temp > img {
   height: 70%;
   width: 70%;
-  margin: 0px 0px 10px -4px;
+  margin: 0px 0px 5px -10px;
 }
 
 #background-video {
