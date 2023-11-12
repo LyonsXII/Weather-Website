@@ -2,8 +2,8 @@
   margin: 0px;
   padding: 0px;
   font-size: 20px;
-  --colourA: #a9d6e5;
-  --colourB: #61a5c2;
+  --colourA: #61a5c2;
+  --colourB: #a9d6e5;
   --fontColourA: #2a6f97;
   --fontColourB: #01497c;
 }
@@ -66,6 +66,11 @@ body {
   border-radius: 10px;
 }
 
+.grid-container-B img {
+  height: 40%;
+  width: 40%;
+}
+
 .flexbox-center {
   display: flex;
   height: 100%;
@@ -94,12 +99,12 @@ body {
 
 .flexbox-container {
   display: flex;
-  gap: 14px;
+  background-color: var(--colourB);
+  border: 4px dotted white;
+  border-radius: 10px;
 }
 
 .flexbox-container > div {
-  background-color: var(--colourB);
-  border-radius: 10px;
   width: 14%;
   padding: 10px;
 }
