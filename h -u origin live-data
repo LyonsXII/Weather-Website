@@ -1,0 +1,35 @@
+[33mcommit 0aa3e2dd86086240180b4d0895334ef48ee5d064[m[33m ([m[1;36mHEAD -> [m[1;32mlive-data[m[33m)[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sun Nov 12 19:39:20 2023 +0000
+
+    Added live data for forecast temperatures
+
+[33mcommit 32e35c039b68dcbea2861ad5789cfe3a113a49fe[m[33m ([m[1;32mmain[m[33m)[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sun Nov 12 19:22:58 2023 +0000
+
+    Adding to title section
+
+[33mcommit 282a2cbe88304c1cb0b67ff37767085747d6b1bf[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sun Nov 12 10:01:45 2023 +0000
+
+    Adding content
+
+[33mcommit 3cced95c06db8d5b61c17c36334ed1525c70ffbb[m[33m ([m[1;32mforecast-block[m[33m)[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sat Nov 11 21:33:39 2023 +0000
+
+    Adding more basic content to page
+
+[33mcommit 948b24328000c85c7932414faa0b3cb59bb60d8c[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sat Nov 11 19:29:45 2023 +0000
+
+    Adding basic content to page
+
+[33mcommit def175f495a200b96a8fd9d6f3252ab4e5d9e3b7[m
+Author: Michael Lyons <michael.lyons1112@gmail.com>
+Date:   Sat Nov 11 14:01:35 2023 +0000
+
+    Creating project
