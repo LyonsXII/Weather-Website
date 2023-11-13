@@ -13,14 +13,20 @@
     <!-- Current Day Key -->
     <div class="grid-container-A-1" style="grid-column: span 3;grid-row: span 9;">
       <div class="flexbox-center" style="grid-column: span 4;grid-row: span 4;">
+        <% if (locals.sevenDay && weatherCodeDict[sevenDay.daily.weather_code[0]] !== undefined) { %>
+          <img src = "<%= weatherCodeDict[sevenDay.daily.weather_code[0]] %>" alt="Weather Icon"/>
+        <% } else { %>
         <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
+        <% } %>
       </div>
       <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
         <div class="flexbox-center" style="grid-row: span 9; grid-column: span 12; margin-top: 4px;">
           <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
         </div>
         <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
-          <h1>Max: 22°C</h1>
+          <% if (locals.sevenDay) { %>
+          <h1>Max: <%= sevenDay.daily.temperature_2m_max[0] %>°C</h1>
+          <% } %>
         </div>
       </div>
       <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
@@ -28,7 +34,9 @@
           <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
         </div>
         <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
-          <h1>Min: 10°C</h1>
+          <% if (locals.sevenDay) { %>
+          <h1>Min: <%= sevenDay.daily.temperature_2m_min[0] %>°C</h1>
+          <% } %>
         </div>
       </div>
       <div style="grid-column: span 3;"></div>
@@ -44,7 +52,7 @@
       <% const days = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th", "13th", "14th", "15th", "16th", "17th", "18th", "19th", "20th", "21st", "22nd", "23rd", "24th", "25th", "26th", "27th", "28th", "29th", "30th", "31st"]; %>
       <% const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
       <% const todaysDate = weekDays[new Date().getDay()] + " " + days[new Date().toString().slice(8,10) - 1] + " " + months[new Date().getMonth()]; %>
-      
+
       <div><h1>Liverpool</h1></div> <div style="grid-column: span 11;">
         <h2><%= todaysDate %></h2></div>
       <div style="grid-column: span 11" class="search-container">
@@ -123,24 +131,25 @@
     <!-- Weekly Forecast -->
     <div class="flexbox-container" style="grid-column: span 7;grid-row: span 3;">
 
-      <% for (let i=0; i<7; i++) { %>
-        <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
-          <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
-            <h1><%= weekDays[new Date(weather.daily.time[i]).getDay()] %></h1>
-            <p><%= weather.daily.time[i] %></p>
+      <% if (locals.sevenDay) { %>
+        <% for (let i=1; i<8; i++) { %>
+          <div class="grid-container-A-2" style="grid-column: span 2;grid-row: span 2;">
+            <div class="med-box" style="grid-row: span 4; grid-column: span 12;">
+              <h1><%= weekDays[new Date(sevenDay.daily.time[i]).getDay()] %></h1>
+              <p><%= sevenDay.daily.time[i] %></p>
+            </div>
+            <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+              <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
+            </div>
+            <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+              <h1><%= sevenDay.daily.temperature_2m_max[i] %></h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+            </div>
+            <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
+              <h1><%= sevenDay.daily.temperature_2m_min[i] %></h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+            </div>
           </div>
-          <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
-            <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
-          </div>
-          <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
-            <h1><%= weather.daily.apparent_temperature_max[i] %></h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
-          </div>
-          <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
-            <h1><%= weather.daily.apparent_temperature_min[i] %></h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
-          </div>
-        </div>
-      <% } %>
-
+        <% } %>
+      <% } %>  
     </div>
   </div>
 
