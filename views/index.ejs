@@ -25,7 +25,7 @@
         </div>
         <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
           <% if (locals.sevenDay) { %>
-          <h1>Max: <%= sevenDay.daily.temperature_2m_max[0] %>°C</h1>
+          <h1>Max: <%= Number.parseFloat(sevenDay.daily.temperature_2m_max[0]).toFixed(1) %>°C</h1>
           <% } %>
         </div>
       </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
           <% if (locals.sevenDay) { %>
-          <h1>Min: <%= sevenDay.daily.temperature_2m_min[0] %>°C</h1>
+          <h1>Min: <%= Number.parseFloat(sevenDay.daily.temperature_2m_min[0]).toFixed(1) %>°C</h1>
           <% } %>
         </div>
       </div>
@@ -139,13 +139,17 @@
               <p><%= sevenDay.daily.time[i] %></p>
             </div>
             <div class="flexbox-center forecast" style="grid-row: span 8; grid-column: span 7;">
+              <% if (weatherCodeDict[sevenDay.daily.weather_code[i]] !== undefined) { %>
+                <img src = "<%= weatherCodeDict[sevenDay.daily.weather_code[i]] %>" alt="Weather Icon"/>
+              <% } else { %>
               <img src = "images/icons/weather/animated/clear-day.svg" alt="Weather Icon"/>
+              <% } %>
             </div>
             <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
-              <h1><%= sevenDay.daily.temperature_2m_max[i] %></h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+              <h1><%= Number.parseFloat(sevenDay.daily.temperature_2m_max[i]).toFixed(1) %></h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
             </div>
             <div class="flexbox-center forecast-temp" style="grid-row: span 4; grid-column: span 5;">
-              <h1><%= sevenDay.daily.temperature_2m_min[i] %></h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+              <h1><%= Number.parseFloat(sevenDay.daily.temperature_2m_min[i]).toFixed(1) %></h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
             </div>
           </div>
         <% } %>
