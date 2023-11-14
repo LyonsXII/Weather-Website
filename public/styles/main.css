@@ -73,6 +73,12 @@ body {
   white-space: nowrap;
 }
 
+.grid-title h3 {
+  white-space: nowrap;
+  font-size: 1.1rem;
+  margin-top: 14px;
+}
+
 form > button {
   padding: 0px 10px;
 }

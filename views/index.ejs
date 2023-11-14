@@ -52,14 +52,15 @@
       <% const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
       <% const todaysDate = weekDays[new Date().getDay()] + " " + days[new Date().toString().slice(8,10) - 1] + " " + months[new Date().getMonth()]; %>
 
-      <div><h1><%= setLocation %></h1></div> <div style="grid-column: span 11;">
-        <h2><%= todaysDate %></h2></div>
-      <div style="grid-column: span 11" class="search-container">
+      <div><h1><%= setLocation[2] %></h1></div> 
+      <div style="grid-column: span 11;"><h2><%= setLocation[3] %></h2></div>
+      <div style="grid-column: span 7;" class="search-container">
         <form action="/submit" method="POST">
           <input type="text" placeholder="Search..." name="search">
           <button type="submit">Submit</button>
         </form>
       </div>
+      <div><h3><%= todaysDate %></h3></div>
     </div>
 
     <!-- Current Day Extra Info -->

@@ -23,7 +23,7 @@ const weatherCodeDict = {0: "images/icons/weather/animated/clear-day.svg",
                          63: "images/icons/weather/animated/rainy-3.svg",
                          80: "images/icons/weather/animated/rainy-2.svg"};
 
-const location = [53.43, -2.91, 'Liverpool'];
+const location = [53.43, -2.91, 'Liverpool', 'Liverpool City Region'];
 
 app.get("/", async (req, res) => {
   try {
@@ -35,7 +35,7 @@ app.get("/", async (req, res) => {
     // console.log(sevenDayForecast.data);
     // console.log(todayForecast.data);
 
-    res.render("index.ejs", { sevenDay: sevenDayForecast.data, weatherCodeDict: weatherCodeDict, setLocation: location[2] })
+    res.render("index.ejs", { sevenDay: sevenDayForecast.data, weatherCodeDict: weatherCodeDict, setLocation: location })
   } catch (error) {
     res.redirect("/");
   }
@@ -43,12 +43,13 @@ app.get("/", async (req, res) => {
 
 app.post("/submit", async (req, res) => {
 	  try {
-      let NominatimConfig = { params: { q: req.body.search, format: "geojson" } };
+      let NominatimConfig = { params: { q: req.body.search, format: "geojson", "accept-language": "en"} };
       let tmpLocation = await axios.get(Nominatim_URL, NominatimConfig);
       location[0] = tmpLocation.data.features[0].geometry.coordinates[1];
       location[1] = tmpLocation.data.features[0].geometry.coordinates[0];
-      const place = tmpLocation.data.features[0].properties.display_name
-      location[2] = place.slice(0, place.indexOf(",")) + place.slice(place.indexOf(",") + 1, place.indexOf(",", place.indexOf(",") + 1))
+      const place = tmpLocation.data.features[0].properties.display_name;
+      location[2] = place.slice(0, place.indexOf(","));
+      location[3] = place.slice(place.indexOf(",") + 1, place.indexOf(",", place.indexOf(",") + 1));
       res.redirect("/");
 	  } catch (error) {
       res.redirect("/");
