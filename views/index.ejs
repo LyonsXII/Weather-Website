@@ -10,7 +10,7 @@
 <body>
 
   <div class="grid-container-A">
-    <!-- Current Day Key -->
+    <!-- Current Day Key Info -->
     <div class="grid-container-A-1" style="grid-column: span 3;grid-row: span 9;">
       <div class="flexbox-center" style="grid-column: span 4;grid-row: span 4;">
         <% if (locals.sevenDay && weatherCodeDict[sevenDay.daily.weather_code[0]] !== undefined) { %>
@@ -46,24 +46,23 @@
     </div>
 
     <!-- Title and Search Box -->
-   
     <div class="grid-title" style="grid-column: span 4; grid-row: span 2;">
       <% const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %>
       <% const days = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th", "13th", "14th", "15th", "16th", "17th", "18th", "19th", "20th", "21st", "22nd", "23rd", "24th", "25th", "26th", "27th", "28th", "29th", "30th", "31st"]; %>
       <% const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
       <% const todaysDate = weekDays[new Date().getDay()] + " " + days[new Date().toString().slice(8,10) - 1] + " " + months[new Date().getMonth()]; %>
 
-      <div><h1>Liverpool</h1></div> <div style="grid-column: span 11;">
+      <div><h1><%= setLocation %></h1></div> <div style="grid-column: span 11;">
         <h2><%= todaysDate %></h2></div>
       <div style="grid-column: span 11" class="search-container">
-        <form action="/submit">
-          <input type="text" placeholder="Search.." name="search">
+        <form action="/submit" method="POST">
+          <input type="text" placeholder="Search..." name="search">
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
 
-    <!-- Current Day Boxes -->
+    <!-- Current Day Extra Info -->
     <div class="grid-container-B" style="grid-column: span 4;grid-row: span 7;">
 
         <div class="grid-container-A-2">

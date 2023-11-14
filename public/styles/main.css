@@ -73,12 +73,8 @@ body {
   white-space: nowrap;
 }
 
-.flexbox-linebreak {
-  flex-basis: 100%;
-}
-
-.flexbox-title > button {
-  justify-self: flex-end;
+form > button {
+  padding: 0px 10px;
 }
 
 .grid-container-B {
@@ -117,11 +113,11 @@ body {
 }
 
 .grid-container-A-2 h1 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .grid-container-A-2 p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .flexbox-container {
