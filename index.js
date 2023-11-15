@@ -27,12 +27,12 @@ const location = [53.43, -2.91, 'Liverpool', 'Liverpool City Region'];
 
 app.get("/", async (req, res) => {
   try {
-    let OpenMeteoConfigA = { params: { latitude: location[0], longitude: location[1], daily: ['sunrise', 'sunset', 'temperature_2m_max', 'temperature_2m_min', 'apparent_temperature_max', 'apparent_temperature_min', 'rain_sum', 'weather_code'], forecast_days: 8 } };
-    let OpenMeteoConfigB = { params: { latitude: location[0], longitude: location[1], hourly: ['apparent_temperature', 'precipitation_probability', 'weather_code'], forecast_days: 1 } };
-    let sevenDayForecast = await axios.get(OpenMeteo_URL, OpenMeteoConfigA);
+    const OpenMeteoConfigA = { params: { latitude: location[0], longitude: location[1], daily: ['sunrise', 'sunset', 'temperature_2m_max', 'temperature_2m_min', 'apparent_temperature_max', 'apparent_temperature_min', 'rain_sum', 'precipitation_probability_mean', 'wind_speed_10m_max', 'uv_index_max', 'weather_code'], forecast_days: 8 } };
+    const OpenMeteoConfigB = { params: { latitude: location[0], longitude: location[1], hourly: ['apparent_temperature', 'precipitation_probability', 'weather_code'], forecast_days: 1 } };
+    const sevenDayForecast = await axios.get(OpenMeteo_URL, OpenMeteoConfigA);
     // const todayForecast = await axios.get(OpenMeteo_URL, OpenMeteoConfigB);
     //let sunrise_time = new Date(result.data.daily.sunrise[0]).toLocaleString();
-    // console.log(sevenDayForecast.data);
+    console.log(sevenDayForecast.data);
     // console.log(todayForecast.data);
 
     res.render("index.ejs", { sevenDay: sevenDayForecast.data, weatherCodeDict: weatherCodeDict, setLocation: location })
@@ -43,8 +43,8 @@ app.get("/", async (req, res) => {
 
 app.post("/submit", async (req, res) => {
 	  try {
-      let NominatimConfig = { params: { q: req.body.search, format: "geojson", "accept-language": "en"} };
-      let tmpLocation = await axios.get(Nominatim_URL, NominatimConfig);
+      const NominatimConfig = { params: { q: req.body.search, format: "geojson", "accept-language": "en"} };
+      const tmpLocation = await axios.get(Nominatim_URL, NominatimConfig);
       location[0] = tmpLocation.data.features[0].geometry.coordinates[1];
       location[1] = tmpLocation.data.features[0].geometry.coordinates[0];
       const place = tmpLocation.data.features[0].properties.display_name;
