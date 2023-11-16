@@ -49,6 +49,21 @@ body {
   width: 86%;
 }
 
+.icon {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.icon h1 {
+  font-size: 1.4rem;
+  margin-left: 55px;
+}
+
+.icon img {
+  height: 40px;
+  margin-left: -40px;
+}
+
 .grid-title {
   display: grid;
   grid-template-rows: 1fr 1fr;

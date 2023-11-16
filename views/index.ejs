@@ -39,10 +39,22 @@
           <% } %>
         </div>
       </div>
-      <div style="grid-column: span 3;"></div>
-      <div style="grid-column: span 3;"></div>
-      <div style="grid-column: span 3;"></div>
-      <div style="grid-column: span 3;"></div>
+
+      <div class="flexbox-center icon" style="grid-column: span 3;">
+        <h1>Full Moon</h1> <img src = "images/icons/weather/animated/clear-night.svg" alt="Weather Icon"/>
+      </div>
+
+      <div class="flexbox-center icon" style="grid-column: span 3;">
+        <h1>Feels like: <%= Number.parseFloat(sevenDay.daily.apparent_temperature_max[0]).toFixed(1) %>°C</h1> <img src = "images/icons/weather/high-temperature.svg" alt="Weather Icon"/>
+      </div>
+
+      <div class="flexbox-center icon" style="grid-column: span 3;">
+        <h1>Feels like: <%= Number.parseFloat(sevenDay.daily.apparent_temperature_min[0]).toFixed(1) %>°C</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+      </div>
+
+      <div class="flexbox-center icon" style="grid-column: span 3;">
+        <h1>Feels like: <%= Number.parseFloat(sevenDay.daily.apparent_temperature_min[0]).toFixed(1) %>°C</h1> <img src = "images/icons/weather/low-temperature.svg" alt="Weather Icon"/>
+      </div>
     </div>
 
     <!-- Title and Search Box -->
@@ -72,7 +84,7 @@
           </div>
           <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
             <h1>Sunrise</h1>
-            <p><%= new Date(sevenDay.daily.sunrise[0]).toLocaleString() %></p>
+            <p><%= new Date(sevenDay.daily.sunrise[0]).toLocaleString().slice(12) %></p>
           </div>
         </div>
 
@@ -82,7 +94,7 @@
           </div>
           <div class="med-box" style="grid-row: span 3; grid-column: span 12;">
             <h1>Sunset</h1>
-            <p><%= new Date(sevenDay.daily.sunset[0]).toLocaleString() %></p>
+            <p><%= new Date(sevenDay.daily.sunset[0]).toLocaleString().slice(12) %></p>
           </div>
         </div>
 
