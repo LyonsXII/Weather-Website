@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
     const sevenDayForecast = await axios.get(OpenMeteo_URL, OpenMeteoConfigA);
     // const todayForecast = await axios.get(OpenMeteo_URL, OpenMeteoConfigB);
     //let sunrise_time = new Date(result.data.daily.sunrise[0]).toLocaleString();
-    console.log(sevenDayForecast.data);
+    // console.log(sevenDayForecast.data);
     // console.log(todayForecast.data);
 
     res.render("index.ejs", { sevenDay: sevenDayForecast.data, weatherCodeDict: weatherCodeDict, setLocation: location })
@@ -49,7 +49,11 @@ app.post("/submit", async (req, res) => {
       location[1] = tmpLocation.data.features[0].geometry.coordinates[0];
       const place = tmpLocation.data.features[0].properties.display_name;
       location[2] = place.slice(0, place.indexOf(","));
-      location[3] = place.slice(place.indexOf(",") + 1, place.indexOf(",", place.indexOf(",") + 1));
+      location[3] = place.slice(place.indexOf(",") + 1);
+      if (location[3].length > 36) {
+        location[3] = location[3].slice(0, 36) + '...';
+      }
+      console.log(location);
       res.redirect("/");
 	  } catch (error) {
       res.redirect("/");
